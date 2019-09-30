@@ -1,7 +1,6 @@
 import random
 class Person:
-	#mark1 = 1/3
-	#mark2 = 2/3
+	
 	def __init__(self, name, health):
 		self.name = name
 		self.health = health
@@ -35,7 +34,7 @@ class AltPerson(Person):
 
 	def special_abilities(self):
 		if self.health < 35:
-			print("Для игрока Компьютер вводятся в силу новые условия!")
+			print("Игрок Компьютер имеет < 35 здоровья! Вступают в силу льготные условия!")
 			print("Вероятность его излечения возрастает на 20%!!!")
 			self.mark2 = 1 - (1/3)*1.2
 			self.mark1 = (1-self.mark2)/2
@@ -57,8 +56,6 @@ class Game:
 		print(self.person1)
 		print(self.person2)
 		print('')
-
-	def set(self):
 		while self.person1.health > 0 and self.person2.health > 0:
 			player = random.choice([self.person1, self.person2])
 			player.hint()
